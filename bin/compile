@@ -1,9 +1,12 @@
 echo "Installing yt-dlp in "$1"/bin"
 
-mkdir -p foo $1/bin
+mkdir -p $1/bin
 
-curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o $1/bin/ytdlp
+curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o $1/bin/yt-dlp
 
-chmod a+rx $1/bin/ytdlp
+chmod a+rx $1/bin/yt-dlp
+
+echo "Installed yt-dlp version:"
+$1/bin/yt-dlp --version
 
 PATH=$PATH:$1/bin/
